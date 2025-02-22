@@ -1,0 +1,443 @@
+:root {
+  --color-primary: #ff014f;
+  --color-gradient-start: #ff014f;
+  --color-gradient-stop: #ff014f;
+  --background-color-1: linear-gradient(145deg, #1e2024, #23272b);
+  --background-color-2: #212428;
+  --shadow-1: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+  --shadow-2: inset 21px 21px 19px #181a1d, inset -21px -21px 19px #202225;
+  --inner-shadow: 1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset, -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset;
+  --shadow-white-3: 5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
+  --gradient-box-w: linear-gradient(145deg, #e2e8ec, #ffffff);
+  --gradient-red-hover: linear-gradient(145deg, #ff014f, #d11414);
+  --color-heading: #ffffff;
+  --color-heading-wv: #1e2125;
+  --color-body: #878e99;
+  --color-body-white: #3c3e41;
+  --color-lightn: #c4cfde;
+  --color-midgray: #878787;
+  --color-light: #E4E6EA;
+  --color-lighter: #CED0D4;
+  --color-lightest: #F0F2F5;
+  --color-border: #E6E6E6;
+  --color-white: #ffffff;
+  --color-white-75: rgba(255, 255, 255, 0.75);
+  --color-success: #3EB75E;
+  --color-danger: #FF0003;
+  --color-warning: #FF8F3C;
+  --color-info: #1BA2DB;
+  --color-facebook: #3B5997;
+  --color-twitter: #1BA1F2;
+  --color-youtube: #ED4141;
+  --color-linkedin: #0077B5;
+  --color-pinterest: #E60022;
+  --color-instagram: #C231A1;
+  --color-vimeo: #00ADEF;
+  --color-twitch: #6441A3;
+  --color-discord: #7289da;
+  --p-light: 300;
+  --p-regular: 400;
+  --p-medium: 500;
+  --p-semi-bold: 600;
+  --p-bold: 700;
+  --p-extra-bold: 800;
+  --p-black: 900;
+  --s-light: 300;
+  --s-regular: 400;
+  --s-medium: 500;
+  --s-semi-bold: 600;
+  --s-bold: 700;
+  --s-extra-bold: 800;
+  --s-black: 900;
+  --transition: 0.4s;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
+  --font-size-b1: 18px;
+  --font-size-b2: 22px;
+  --font-size-b3: 14px;
+  --line-height-b1: 1.50;
+  --line-height-b2: 1.6;
+  --line-height-b3: 1.7;
+  --h1: 70px;
+  --h2: 60px;
+  --h3: 50px;
+  --h4: 40px;
+  --h5: 30px;
+  --h6: 20px;
+}
+
+body {
+  line-height: 1.6em;
+  letter-spacing: 0.02em;
+  font-size: var(--font-size-b1);
+  line-height: var(--line-height-b1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-primary);
+  color: var(--color-body);
+  font-weight: var(--p-regular);
+
+}
+
+.bg-background {
+  background-color: #212428;
+
+}
+
+[data-black-overlay] {
+  position: relative;
+  z-index: 2;
+}
+
+[data-black-overlay]>div,
+[data-black-overlay]>* {
+  position: relative;
+  z-index: 2;
+}
+
+
+[data-black-overlay]:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+[data-black-overlay]:before {
+  background-color: #252a326b;
+
+}
+
+@for $i from 1 through 10 {
+
+  [data-overlay="#{$i}"]:before,
+  [data-black-overlay="#{$i}"]:before,
+  [data-white-overlay="#{$i}"]:before {
+    opacity: #{$i * 0.10};
+  }
+}
+
+.h1,
+h1,
+.h2,
+h2,
+.h3,
+h3,
+.h4,
+h4,
+.h5,
+h5,
+.h6,
+h6 {
+  font-family: 'Roboto', sans-serif;
+  color: #282828;
+  font-weight: 500;
+}
+
+.h1,
+h1 {
+  font-weight: 700;
+  line-height: 1.6363em;
+  font-size: 55px;
+}
+
+.h2,
+h2 {
+  line-height: 1.111em;
+  font-size: 45px;
+}
+
+h2.title {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-lightn);
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+h2:after {
+  content: ' ';
+  border-bottom: solid #c4cfde 2px;
+  /* using border rather than underline; it's easier that way */
+  width: 60px;
+  /*however long you want the underline */
+  display: inline-block;
+  /* this is required for the width parameter to work */
+  margin-left: 5px;
+}
+
+.section-title {
+  color: var(--color-subtitle);
+  letter-spacing: 1px;
+  display: block;
+  line-height: 14px;
+  margin-bottom: 10px;
+}
+
+.h3,
+h3 {
+  line-height: 1.111em;
+  font-size: 37px;
+}
+
+.h4,
+h4 {
+  line-height: 1.7em;
+  font-size: 24px;
+}
+
+.h5,
+h5 {
+  line-height: 1.9em;
+  font-size: 20px;
+}
+
+.h6,
+h6 {
+  line-height: 1.8em;
+  font-size: 16px;
+}
+
+.hero-title {
+  font-size: 70px;
+  font-weight: 700;
+  font-family: var(--font-secondary);
+  line-height: 1.2;
+  color: #c4cfde;
+}
+
+a.rn-btn,
+button.rn-btn {
+  display: inline-block;
+  padding: 15px 35px;
+  list-style: none;
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+a.rn-btn,
+button.rn-btn {
+  border-radius: 6px;
+  background: linear-gradient(145deg, #1e2024, #23272b);
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
+  position: relative;
+  z-index: 2;
+  font-size: 14px;
+  font-weight: 500;
+  border: 0 none;
+
+  &:hover {
+    transform: translateY(-5px);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &.no-shadow {
+    box-shadow: none;
+  }
+}
+
+a.rn-btn::before,
+button.rn-btn::before {
+  content: "";
+  position: absolute;
+  transition: var(--transition);
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right bottom, #212428, #16181c);
+  opacity: 0;
+  z-index: -1;
+}
+
+.main-nav>li>a {
+  font-weight: 500;
+  color: #252525;
+}
+
+.main-nav>li>a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.main-nav>li>a .link-ext {
+  background: #ff014f;
+}
+
+.main-nav>li.is-active>a,
+.main-nav>li.current-menu-item>a,
+.main-nav>li:hover>a,
+.main-nav>li>a:hover {
+  color: #ff014f;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-family: var(--font-secondary);
+  color: var(--color-lightn);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 75px;
+  margin-bottom: 22px;
+  font-family: var(--font-secondary);
+}
+
+
+.name-span {
+  color: var(--color-primary);
+}
+
+.dark-m-theme {
+  transition: 0.5s all ease-in-out;
+  border-radius: 10px;
+  background: var(--background-color-1);
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+    color: white;
+    transition-duration: 5ms;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &.no-shadow {
+    box-shadow: none;
+  }
+}
+
+.main-footer {
+  color: #92959b;
+}
+
+.main-footer a:not(.btn) {
+  color: #92959b;
+}
+
+.main-footer a:not(.btn):hover {
+  color: #fff;
+}
+
+
+/* banner section */
+.social-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
+  color: var(--color-lightn);
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.list-style {
+  padding: 0;
+  list-style: none;
+}
+
+.social-share {
+  margin-left: 5px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.social-share li a {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: var(--transition);
+  background: var(--background-color-1);
+  box-shadow: var(--shadow-1);
+  position: relative;
+
+  &:hover {
+    transform: translateY(-5px);
+
+
+    svg {
+      color: #ff014f;
+    }
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.social-share li a::before {
+  content: "";
+  position: absolute;
+  transition: var(--transition);
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right bottom, #212428, #16181c);
+  opacity: 0;
+  z-index: -1;
+}
+
+.social-share li a svg {
+  color: var(--color-lightn);
+  transition: var(--transition);
+  stroke-width: 2;
+  position: relative;
+  z-index: 2;
+  width: 20px;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+@media (min-width: 1200px) {
+  .main-header .is-stuck {
+    background: #ffffff !important;
+  }
+
+  .mainbar-wrap.is-stuck .social-icon a,
+  .mainbar-wrap.is-stuck .header-module .ld-module-trigger,
+  .mainbar-wrap.is-stuck .main-nav>li>a {
+    color: #353535 !important;
+  }
+
+  .mainbar-wrap.is-stuck .social-icon a:hover,
+  .mainbar-wrap.is-stuck .main-nav>li>a:hover {
+    color: #ff6faf !important;
+  }
+}
